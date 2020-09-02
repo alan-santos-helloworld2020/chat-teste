@@ -59,7 +59,6 @@ let root = new Vue({
     data: {
         userself:"",
         socket: io(),
-        ver: false,
         msg: {
             id: null,
             data: null,
@@ -75,7 +74,7 @@ let root = new Vue({
         do {
 
             this.msg.nome = prompt("Informe seu nome");
-            this.ver = true;
+
 
         } while (!this.msg.nome);
 
