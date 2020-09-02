@@ -57,7 +57,6 @@ let root = new Vue({
     el: "#root",
   
     data: {
-        userself:"",
         socket: io(),
         msg: {
             id: null,
