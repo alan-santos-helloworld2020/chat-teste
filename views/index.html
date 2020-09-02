@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <title>VueJS-Home</title>
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper green darken-4">
+                <a href="/" class="brand-logo center">VueJS</a>
+            </div>
+        </nav>
+    </div>
+
+
+    <div id="root">
+
+
+
+        <div class="msg">
+
+            <div v-for="ms in pac_msg" v-key="ms.id">
+                <my-msg :ms="ms" :userself="ms.style"></my-msg>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <footer class="footer grey lighten-5">
+                    <div class="col s10">
+                        <input v-model="msg.mensagem" type="text" />
+                    </div>
+                    <div class="col s2">
+                        <button class="btn-floating right" @click="enviar()"
+                            :disabled="msg.mensagem == null ? true:false">></button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/vue/dist/vue.min.js"></script>
+    <script src="/cliente.js"></script>
+</body>
+</html>

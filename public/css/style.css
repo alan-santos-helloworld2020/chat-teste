@@ -1,0 +1,10 @@
+.footer{
+    position: fixed;
+    bottom: 0px;
+    justify-content: center;
+    padding: 5px;
+}
+.msg{
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
