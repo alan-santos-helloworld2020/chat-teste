@@ -1,2 +1,2 @@
 # chat-teste
-Teste chat com vue socket.io e materialize
+Teste chat com node,vue,socket.io e materialize
