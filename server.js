@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var router = require('./router/router');
 var moment = require('moment');
 var http = require('http');
 var socketio = require('socket.io');
@@ -11,13 +12,7 @@ var app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views')));
-app.get('/', (req, res) => {
-    res.sendFile('index.html');
-
-
-});
+app.use(router);
 
 io.on('connection', (socket) => {
  
