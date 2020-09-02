@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-
+ 
     socket.on('connection', (msg) => {
         msg.mensagem = "Conectado";
         io.emit('online', msg);
