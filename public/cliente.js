@@ -3,24 +3,24 @@ var messenger = {
 
     props: {
 
-        ms:{},
-        userself:{
-            type:String
+        ms: {},
+        userself: {
+            type: String
         }
 
     },
-    data:()=>{
-     
+    data: () => {
 
-        return{
-            user:{
-                data:"col s12 center green lighten-4",
-                hora:"col s12 center green lighten-5",
-                nome:"col s12 left purple-text",
-                msg:"col s12 left grey lighten-5"
 
+        return {
+            user: {
+                data: "col s12 center green lighten-4",
+                hora: "col s12 center green lighten-5",
+                nome: "col s12 left purple-text",
+                msg: "col s12 left grey lighten-5"
+
+            }
         }
-    }
 
     },
     template: `
@@ -55,7 +55,7 @@ var messenger = {
 let root = new Vue({
 
     el: "#root",
-  
+
     data: {
         socket: io(),
         msg: {
@@ -64,7 +64,7 @@ let root = new Vue({
             hora: null,
             nome: null,
             mensagem: null,
-            style:""
+            style: ""
         },
         pac_msg: []
     },
@@ -90,11 +90,11 @@ let root = new Vue({
 
             this.socket.on('online', (msg) => {
                 if (msg.nome == this.msg.nome) {
-                    msg.style="center green lighten-4";
+                    msg.style = "center green lighten-4";
                     msg.nome = "Você";
-                    
-                                        
-                }else{
+
+
+                } else {
                     msg.style = "center blue lighten-4";
 
                 }
@@ -105,9 +105,9 @@ let root = new Vue({
         }
 
     },
-     
-     components:{"my-msg":messenger}
-    
+
+    components: { "my-msg": messenger }
+
 
 }).resposta();
 
